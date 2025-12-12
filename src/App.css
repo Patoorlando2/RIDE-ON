@@ -1,0 +1,33 @@
+:root{
+  --azulSistema: #2064C7;
+  --celesteSistema: #579BFF;
+  --celesteHover:#5296FF;
+}
+
+.fondo-navbar {
+    background-color: var(--azulSistema);
+}
+
+.nav-item.item-hover:hover {
+    background-color: var(--celesteHover);
+    border-radius: 10px;
+}
+
+/* .style-top-bar{
+  display: inline-block;
+  white-space: nowrap;
+  box-sizing: border-box;
+  animation: scroll-text 20s linear infinite;
+} */
+
+/* .roboto {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+} */
+
+
+
