@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from '../assets/Logo2.png'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
@@ -13,12 +12,11 @@ function Navbar() {
             <ul className="navbar-nav ms-auto me-auto">
 
                 <li className="nav-item item-hover">
-                    {/* <a className="nav-link active text-white" aria-current="page" href="#">Inicio</a> */}
                     <Link to="/" className='nav-link active text-white' aria-current="page">Inicio</Link> 
                 </li>
 
                 <li className="nav-item item-hover">
-                    <Link  to="/" className="nav-link text-white" href="#">Tienda</Link>
+                    <Link  to="/Tienda" className="nav-link text-white" href="#">Tienda</Link>
                 </li>
 
                 <li className="nav-item item-hover dropdown">
@@ -27,27 +25,27 @@ function Navbar() {
                     </a>
                     <ul className="dropdown-menu text-center roboto"> 
                         {/** Por ahora hardcodeo, luego sacamos categorias por Context Api */}
-                        <li><a className="dropdown-item" href="#">Enduro</a></li>
-                        <li><a className="dropdown-item" href="#">Street</a></li>
-                        <li><a className="dropdown-item" href="#">Naked</a></li>
-                        <li><a className="dropdown-item" href="#">Scooter</a></li>
-                        <li><a className="dropdown-item" href="#">Touring</a></li>
-                        <li><a className="dropdown-item" href="#">CUB</a></li>
-                        <li><a className="dropdown-item" href="#">Motard</a></li>
-                        <li><a className="dropdown-item" href="#">Supersport</a></li>
+                        <li><Link to="#" className="dropdown-item">Enduro</Link></li>
+                        <li><Link to="#" className="dropdown-item">Street</Link></li>
+                        <li><Link to="#" className="dropdown-item">Naked</Link></li>
+                        <li><Link to="#" className="dropdown-item">Scooter</Link></li>
+                        <li><Link to="#" className="dropdown-item">Touring</Link></li>
+                        <li><Link to="#" className="dropdown-item">CUB</Link></li>
+                        <li><Link to="#" className="dropdown-item">Motard</Link></li>
+                        <li><Link to="#" className="dropdown-item">Supersport</Link></li>
                     </ul>
                 </li>
 
                  <li className="nav-item item-hover">
-                    <a className="nav-link text-white" href="#">Motos Destacadas</a>
+                    <Link to="#" className="nav-link text-white">Motos Destacadas</Link>
                 </li>
 
                  <li className="nav-item item-hover">
-                    <a className="nav-link text-white" href="#">Motos Usadas</a>
+                    <Link className="nav-link text-white" to="#">Motos Usadas</Link>
                 </li>
 
                  <li className="nav-item item-hover">
-                    <a className="nav-link text-white" href="#">Ofertas</a>
+                    <Link className="nav-link text-white" to="#">Ofertas</Link>
                 </li>
 
                 <li className="nav-item item-hover dropdown">
@@ -56,15 +54,23 @@ function Navbar() {
                     </a>
                     <ul className="dropdown-menu">
                         {/** Por ahora hardcodeo, luego sacamos categorias por Context Api */}
-                        <li><a className="dropdown-item" href="#">Guantes</a></li>
-                        <li><a className="dropdown-item" href="#">Cascos</a></li>
-                        <li><a className="dropdown-item" href="#">Indumentaria</a></li>
-                        <li><a className="dropdown-item" href="#">Accesorios para la moto</a></li>
-                        <li><a className="dropdown-item" href="#">Calzado</a></li>
-                        <li><a className="dropdown-item" href="#">Repuestos</a></li>
+                        <li><Link className="dropdown-item" to="#">Guantes</Link></li>
+                        <li><Link className="dropdown-item" to="#">Cascos</Link></li>
+                        <li><Link className="dropdown-item" to="#">Indumentaria</Link></li>
+                        <li><Link className="dropdown-item" to="#">Accesorios para la moto</Link></li>
+                        <li><Link className="dropdown-item" to="#">Calzado</Link></li>
+                        <li><Link className="dropdown-item" to="#">Repuestos</Link></li>
                     </ul>
                 </li>
             </ul>
+            <div>
+                <i class="bi bi-cart"></i>
+
+
+            </div>
+
+
+            
             </div>
         </div>
     </nav>

@@ -7,7 +7,7 @@ function OfertasSemanaContainer() {
     const DESCUENTO = 20;
 
     // filtrar por ofertas
-    const AccesoriosFiltrados = accesorios.filter(a => a.destacados === 1);
+    const AccesoriosFiltrados = accesorios.filter(a => a.destacados === 1).slice(0,8);
 
     const precioConDescuento = (precio, porcentaje) => {
       return precio - (precio * porcentaje) / 100;
