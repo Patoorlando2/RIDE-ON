@@ -5,8 +5,8 @@ import Navbar from '../Components/Navbar'
 import Carousel from '../Components/Carousel'
 import Footer from '../Components/Footer'
 import PDescatadosContainer from '../Components/PDescatadosContainer'
-import OfertasSemana from '../Components/OfertasSemana'
 import Newsletter from '../Components/Newsletter'
+import OfertasSemanaContainer from '../Components/OfertasSemanaContainer'
 
 function Home() {
   return (
@@ -16,7 +16,7 @@ function Home() {
     <Navbar />
     <Carousel />
     <PDescatadosContainer />
-    <OfertasSemana />
+    <OfertasSemanaContainer />
     <Newsletter />
     <Footer />
     </>
