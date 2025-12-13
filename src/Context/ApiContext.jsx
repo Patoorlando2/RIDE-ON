@@ -20,31 +20,31 @@ export const ApiProvider = ({children}) => {
 
 
     const fetchProductos = async () => {
-    try {
-        const response = await fetch(API_URL);
-        if (!response.ok) {
-        throw new Error(`Error en la respuesta de la red: ${response.status}`);
+        try {
+            const response = await fetch(API_URL);
+            if (!response.ok) {
+            throw new Error(`Error en la respuesta de la red: ${response.status}`);
+            }
+            const json = await response.json();
+            setProductosData(json.data ?? []);
+        } catch (err) {
+            setError(err.message);
+            setProductosData([]);
         }
-        const json = await response.json();
-        setProductosData(json.data ?? []);
-    } catch (err) {
-        setError(err.message);
-        setProductosData([]);
-    }
     };
 
     const fetchAccesorios = async () => {
-    try {
-        const response = await fetch(API_ACCESORIOS);
-        if (!response.ok) {
-        throw new Error(`Error en la respuesta de la red: ${response.status}`);
+        try {
+            const response = await fetch(API_ACCESORIOS);
+            if (!response.ok) {
+            throw new Error(`Error en la respuesta de la red: ${response.status}`);
+            }
+            const json = await response.json();
+            setAccesoriosData(json.data ?? []);
+        } catch (err) {
+            setError(err.message);
+            setAccesoriosData([]);
         }
-        const json = await response.json();
-        setAccesoriosData(json?? []);
-    } catch (err) {
-        setError(err.message);
-        setAccesoriosData([]);
-    }
     };
 
     useEffect(() => {

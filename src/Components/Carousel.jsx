@@ -1,30 +1,45 @@
-import React from 'react'
-import bannerEnduro from '../assets/skua.jpg'
-import bannerStreet from '../assets/banner-s2.jpeg'
-import wallpaper from '../assets/wallpaper.jpg'
 
-function Carousel() {
+function Carousel({ images, height = 700, id = "carouselExampleAutoplaying" }) {
+    
   return (
+    <div id={id} className="carousel slide" data-bs-ride="carousel">
+      <div className="carousel-inner">
+        {images.map((img, index) => (
+          <div
+            key={index}
+            className={`carousel-item ${index === 0 ? "active" : ""}`}
+          >
+            <img
+              src={img.src}
+              className="d-block w-100"
+              alt={img.alt || "slide"}
+              height={height}
+            />
+          </div>
+        ))}
+      </div>
 
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src={wallpaper} class="d-block w-100" alt="..." height={700}  />
-            </div>
-            <div class="carousel-item">
-                <img src={bannerEnduro} class="d-block w-100" height={700} alt="..."/>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+      <button
+        className="carousel-control-prev"
+        type="button"
+        data-bs-target={`#${id}`}
+        data-bs-slide="prev"
+      >
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Previous</span>
+      </button>
+
+      <button
+        className="carousel-control-next"
+        type="button"
+        data-bs-target={`#${id}`}
+        data-bs-slide="next"
+      >
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Next</span>
+      </button>
     </div>
-  )
+  );
 }
 
-export default Carousel
+export default Carousel;

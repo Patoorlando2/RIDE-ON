@@ -1,4 +1,4 @@
-function OfertasSemana({ title, accesorios = [] }) {
+function OfertasSemana({ title, accesorios = [], precioOferta, descuento }) {
   return (
     <div className="container py-5">
       {/* Título */}
@@ -33,9 +33,18 @@ function OfertasSemana({ title, accesorios = [] }) {
 
                 {/* Precios */}
                 <div className="d-flex flex-column">
-                  <span className="text-danger">
-                    {accesorio.precio}
+                  <span className="text-decoration-line-through text-danger">
+                    ${parseInt(accesorio.precio)}
                   </span>
+                  <div>
+                      <span className="text-success">
+                     ${parseInt(precioOferta(accesorio.precio, descuento).toFixed(2))}
+                  </span>
+                  <span className="badge bg-success ms-2 w-30 ms-4">
+                    -{descuento}%
+                  </span>
+                  </div>
+                   
                 </div>
               </div>
             </div>

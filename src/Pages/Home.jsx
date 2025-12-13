@@ -8,13 +8,24 @@ import PDescatadosContainer from '../Components/PDescatadosContainer'
 import Newsletter from '../Components/Newsletter'
 import OfertasSemanaContainer from '../Components/OfertasSemanaContainer'
 
+import bannerEnduro from "../assets/skua.jpg";
+import bannerStreet from "../assets/banner-s2.jpeg";
+import wallpaper from "../assets/wallpaper.jpg";
+
+const images = [
+  { src: wallpaper, alt: "Wallpaper" },
+  { src: bannerEnduro, alt: "Enduro" },
+  { src: bannerStreet, alt: "Street" },
+];
+
+
 function Home() {
   return (
     <>
     <TopBar/>
     <Header />
     <Navbar />
-    <Carousel />
+    <Carousel images={images} height={700} />
     <PDescatadosContainer />
     <OfertasSemanaContainer />
     <Newsletter />

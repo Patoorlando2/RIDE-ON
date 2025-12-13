@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../assets/Logo2.png'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
@@ -12,11 +13,12 @@ function Navbar() {
             <ul className="navbar-nav ms-auto me-auto">
 
                 <li className="nav-item item-hover">
-                    <a className="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+                    {/* <a className="nav-link active text-white" aria-current="page" href="#">Inicio</a> */}
+                    <Link to="/" className='nav-link active text-white' aria-current="page">Inicio</Link> 
                 </li>
 
                 <li className="nav-item item-hover">
-                    <a className="nav-link text-white" href="#">Tienda</a>
+                    <Link  to="/" className="nav-link text-white" href="#">Tienda</Link>
                 </li>
 
                 <li className="nav-item item-hover dropdown">
