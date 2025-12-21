@@ -1,7 +1,6 @@
 import React from 'react'
 import TopBar from '../Components/TopBar'
 import Header from '../Components/Header'
-import Navbar from '../Components/Navbar'
 import Carousel from '../Components/Carousel'
 import Footer from '../Components/Footer'
 import PDescatadosContainer from '../Components/PDescatadosContainer'
@@ -11,6 +10,7 @@ import OfertasSemanaContainer from '../Components/OfertasSemanaContainer'
 import bannerEnduro from "../assets/skua.jpg";
 import bannerStreet from "../assets/banner-s2.jpeg";
 import wallpaper from "../assets/wallpaper.jpg";
+import NavbarContainer from '../Components/NavbarContainer'
 
 const images = [
   { src: wallpaper, alt: "Wallpaper" },
@@ -24,7 +24,7 @@ function Home() {
     <>
     <TopBar/>
     <Header />
-    <Navbar />
+    <NavbarContainer />
     <Carousel images={images} height={700} />
     <PDescatadosContainer />
     <OfertasSemanaContainer />

@@ -1,7 +1,6 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Navbar() {
+function Navbar({categoriasM,categoriasAcc}) {
   return (
     <nav className="navbar navbar-expand-lg fondo-navbar navbar shadow-sm py-2">
         <div className="container-fluid">
@@ -25,14 +24,11 @@ function Navbar() {
                     </a>
                     <ul className="dropdown-menu text-center roboto"> 
                         {/** Por ahora hardcodeo, luego sacamos categorias por Context Api */}
-                        <li><Link to="#" className="dropdown-item">Enduro</Link></li>
-                        <li><Link to="#" className="dropdown-item">Street</Link></li>
-                        <li><Link to="#" className="dropdown-item">Naked</Link></li>
-                        <li><Link to="#" className="dropdown-item">Scooter</Link></li>
-                        <li><Link to="#" className="dropdown-item">Touring</Link></li>
-                        <li><Link to="#" className="dropdown-item">CUB</Link></li>
-                        <li><Link to="#" className="dropdown-item">Motard</Link></li>
-                        <li><Link to="#" className="dropdown-item">Supersport</Link></li>
+                        {categoriasM.map((c) => 
+                            <li key={c.id_categoria}>
+                                <Link to="#" className="dropdown-item">{c.categoria}</Link>
+                            </li>
+                        )}
                     </ul>
                 </li>
 
@@ -54,22 +50,22 @@ function Navbar() {
                     </a>
                     <ul className="dropdown-menu">
                         {/** Por ahora hardcodeo, luego sacamos categorias por Context Api */}
-                        <li><Link className="dropdown-item" to="#">Guantes</Link></li>
-                        <li><Link className="dropdown-item" to="#">Cascos</Link></li>
+                        {categoriasAcc.map((c) => 
+                            <li key={c.id_categoria}>
+                                <Link className="dropdown-item" to="#">{c.categoria}</Link>
+                            </li>
+                        )}
+                        {/* <li><Link className="dropdown-item" to="#">Cascos</Link></li>
                         <li><Link className="dropdown-item" to="#">Indumentaria</Link></li>
                         <li><Link className="dropdown-item" to="#">Accesorios para la moto</Link></li>
                         <li><Link className="dropdown-item" to="#">Calzado</Link></li>
-                        <li><Link className="dropdown-item" to="#">Repuestos</Link></li>
+                        <li><Link className="dropdown-item" to="#">Repuestos</Link></li> */}
                     </ul>
                 </li>
             </ul>
             <div>
-                <i class="bi bi-cart"></i>
-
-
+                <i class="bi bi-cart text-white fs-4 p-3">0</i>
             </div>
-
-
             
             </div>
         </div>

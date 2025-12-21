@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ProductosDestacados({ title, productos = [] }) {
 
@@ -13,6 +14,7 @@ function ProductosDestacados({ title, productos = [] }) {
           
           {productos.map((producto) => (
             <div className="col-12 col-md-6 col-lg-3" key={producto.id_producto}>
+              <Link to={`/producto/${producto.id_producto}`}>
               <div className="card h-100">
                 <img
                   src={producto.imagen.url_completa}
@@ -25,6 +27,7 @@ function ProductosDestacados({ title, productos = [] }) {
                   <strong>${parseInt(producto.precio)}</strong>
                 </div>
               </div>
+              </Link>
             </div>
           ))}
           
