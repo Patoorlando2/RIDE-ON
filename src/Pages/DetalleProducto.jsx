@@ -5,6 +5,7 @@ import TopBar from '../Components/TopBar';
 import NavbarContainer from '../Components/NavbarContainer';
 import Footer from '../Components/Footer';
 import Newsletter from '../Components/Newsletter';
+import Header from '../Components/Header';
 
 function DetalleProducto() {
 
@@ -18,6 +19,7 @@ function DetalleProducto() {
   return (
     <>
     <TopBar />
+    <Header />
     <NavbarContainer />
    <div className="container mt-5">
       <div className="row">
@@ -30,11 +32,12 @@ function DetalleProducto() {
           <p className="lead">{producto.descripcion || "Sin descripción disponible."}</p>
           <hr />
           <p><strong>Estado:</strong> {producto.estado}</p>
-          <p><strong>Estado:</strong> {producto.categoria.categoria}</p>
+          <p><strong>Categoria:</strong> {producto.categoria.categoria}</p>
           <button className="btn btn-success btn-lg">Agregar al carrito</button>
         </div>
       </div>
     </div>
+    <br />
     <Newsletter />
     <Footer />
     </>

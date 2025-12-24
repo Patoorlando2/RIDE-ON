@@ -30,10 +30,10 @@ function Tienda() {
         </div>
       </div>
       <div className="row">
-        <div className="col-lg-3 col-md-4 mb-4">
+        <div className="col-lg-4 col-md-4 mb-4">
             <ProductosFilter />
         </div>
-        <div className="col-lg-9 col-md-8">
+        <div className="col-lg-8 col-md-8">
           <GridProductosContainer />
         </div>
       </div>
