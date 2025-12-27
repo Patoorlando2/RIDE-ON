@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-function Navbar({categoriasM,categoriasAcc}) {
+function Navbar({categoriasM,categoriasAcc, carrito}) {
   return (
     <nav className="navbar navbar-expand-lg fondo-navbar navbar shadow-sm py-2">
         <div className="container-fluid">
@@ -64,7 +64,8 @@ function Navbar({categoriasM,categoriasAcc}) {
                 </li>
             </ul>
             <div>
-                <i class="bi bi-cart text-white fs-4 p-3">0</i>
+                <i class="bi bi-cart text-white fs-4 p-3">{carrito.length}</i>
+                {/** Faltaría modal con sus productos del carrito agregado, solo modal sin vista.*/}
             </div>
             
             </div>

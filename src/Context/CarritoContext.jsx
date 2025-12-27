@@ -1,37 +1,47 @@
-import React, { useContext } from 'react'
-import { createContext } from 'react';
+import { createContext, useContext, useState } from "react";
 
-  const carritoContext = createContext();
+const CarritoContext = createContext();
 
-export const useCarritoContext = () => {
+// Hook personalizado para usar el contexto fácilmente
+export const useCarrito = () => useContext(CarritoContext);
 
-    return useContext(carritoContext);
-}
+export const CarritoProvider = ({ children }) => {
 
-export const CarritoContext = () => {
+  const [carrito, setCarrito] = useState([]);
 
-    [item, setItem] = useState()
-    [carrito, setCarrito] = useState([])
+  // Agregar item al carrito
+  const addItem = (producto) => {
+    setCarrito(prev => {
+      // si el producto ya está, solo actualizo cantidad
+      const existe = prev.find(item => item.id === producto.id);
 
-  const addItem = () => {  
-  }
+      if (existe) {
+        return prev.map(item =>
+          item.id === producto.id
+            ? { ...item, cantidad: item.cantidad + producto.cantidad }
+            : item
+        );
+      }
 
-  const removeItem = () => {
+      return [...prev, producto];
+    });
+  };
 
-  }
+  //  Eliminar un item por ID
+  const removeItem = (id) => {
+    setCarrito(prev => prev.filter(item => item.id !== id));
+  };
 
-  const resetItem = () => {
-
-    setCarrito([])
-
-  }
-
-}
+  //  Vaciar carrito
+  const resetCarrito = () => {
+    setCarrito([]);
+  };
 
   return (
-    <div>
-      
-    </div>
-  )
-
-export default CarritoContext
+    <CarritoContext.Provider
+      value={{ carrito, addItem, removeItem, resetCarrito }}
+    >
+      {children}
+    </CarritoContext.Provider>
+  );
+};

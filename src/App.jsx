@@ -4,11 +4,13 @@ import Home from './Pages/Home'
 import { ApiProvider } from './Context/ApiContext'
 import Tienda from './Pages/Tienda'
 import DetalleProducto from './Pages/DetalleProducto'
+import { CarritoProvider } from './Context/CarritoContext'
 
 function App() {
 
   return (
     <>
+    <CarritoProvider>
     <ApiProvider>
     <Routes>
 
@@ -18,6 +20,7 @@ function App() {
 
     </Routes>
     </ApiProvider>
+    </CarritoProvider>
 
     </>
   )

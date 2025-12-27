@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar';
 import { useApiContext } from '../Context/ApiContext';
+import { useCarrito } from '../Context/CarritoContext';
 
 
 function NavbarContainer() {
@@ -11,6 +12,8 @@ function NavbarContainer() {
 
     const categoriasMoto = categorias.filter(p => p.tipo == "moto");
     const categoriasAcc = categorias.filter(p => p.tipo == "accesorio");
+
+     const { carrito, setCarrito } = useCarrito();
 
 
      if (cargando) {
@@ -27,7 +30,7 @@ function NavbarContainer() {
     
   return (
 
-    <Navbar categoriasM={categoriasMoto} categoriasAcc={categoriasAcc} />
+    <Navbar categoriasM={categoriasMoto} categoriasAcc={categoriasAcc} carrito={carrito}/>
   )
 }
 

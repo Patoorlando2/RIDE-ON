@@ -6,6 +6,7 @@ import NavbarContainer from '../Components/NavbarContainer';
 import Footer from '../Components/Footer';
 import Newsletter from '../Components/Newsletter';
 import Header from '../Components/Header';
+import { useCarrito } from '../Context/CarritoContext';
 
 function DetalleProducto() {
 
@@ -15,6 +16,20 @@ function DetalleProducto() {
     const producto = productos.find((p) => p.id_producto === parseInt(id));
 
     if (!producto) return <p>Producto no encontrado</p>;
+
+    const { addItem } = useCarrito();
+
+    const handleAdd = () => {
+      addItem({
+        id: producto.id,
+        nombre: producto.nombre,
+        precio: producto.precio,
+        cantidad: 1,
+      });
+    };
+
+
+
 
   return (
     <>
@@ -33,7 +48,7 @@ function DetalleProducto() {
           <hr />
           <p><strong>Estado:</strong> {producto.estado}</p>
           <p><strong>Categoria:</strong> {producto.categoria.categoria}</p>
-          <button className="btn btn-success btn-lg">Agregar al carrito</button>
+          <button className="btn btn-success btn-lg" onClick={handleAdd}>Agregar al carrito</button>
         </div>
       </div>
     </div>
