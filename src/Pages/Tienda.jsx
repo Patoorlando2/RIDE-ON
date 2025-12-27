@@ -7,6 +7,7 @@ import Footer from '../Components/Footer'
 import NavbarContainer from '../Components/NavbarContainer'
 import ProductosFilter from '../Components/ProductosFilter'
 import GridProductosContainer from '../Components/GridProductosContainer'
+import Grid from '../Components/Grid'
 
 
 
@@ -28,8 +29,6 @@ function Tienda() {
     oferta: false
   });
 
-
-
   return (
     <>
     <TopBar />
@@ -37,7 +36,7 @@ function Tienda() {
     <NavbarContainer />
     <Carousel images={images} height = {700} />
     {/** Acá entrearia filtro y prodcutos grid */}
-    <div className="container">
+    {/* <div className="container">
 
       <div className="row">
         <div className="col-lg-12 mt-5 text-center fs-2 fw-400">
@@ -53,7 +52,9 @@ function Tienda() {
           <GridProductosContainer filtros={filtros} />
         </div>
       </div>
-    </div>
+    </div> */}
+    {/* <Grid /> */}
+    <GridProductosContainer />
     <Footer /> 
     </>
   )
