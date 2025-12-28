@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Grid({productos}) {
+function Grid({productos, filtros, handleChange, limpiar}) {
   return (
     <div className="container">
 
@@ -13,7 +13,7 @@ function Grid({productos}) {
 
       <div className="row">
         <div className="col-lg-4 col-md-4 mb-4">
-            {/* <ProductosFilter filtros={filtros} setFiltros={setFiltros} /> */}
+            {/* Filtro de productos*/}
             <div className="card border-0 shadow-lg p-3 mb-4 mt-5">
                 <h5 className="fw-bold mb-4 text-center">Filtros de Búsqueda</h5>
 
@@ -28,8 +28,8 @@ function Grid({productos}) {
                         name="estado"
                         id="nuevo"
                         value="nueva"
-                        // checked={filtros.estado === "nueva"}
-                        // onChange={handleChange}
+                        checked={filtros.estado === "nueva"}
+                        onChange={handleChange}
                     />
                     <label className="form-check-label" htmlFor="nuevo">Nuevo</label>
                     </div>
@@ -41,8 +41,8 @@ function Grid({productos}) {
                         name="estado"
                         id="usado"
                         value="usado"
-                        // checked={filtros.estado === "usado"}
-                        // onChange={handleChange}
+                        checked={filtros.estado === "usado"}
+                        onChange={handleChange}
                     />
                     <label className="form-check-label" htmlFor="usado">Usado</label>
                     </div>
@@ -54,8 +54,8 @@ function Grid({productos}) {
                     <select 
                     className="form-select"
                     name="categoria"
-                    // value={filtros.categoria}
-                    // onChange={handleChange}
+                    value={filtros.categoria}
+                    onChange={handleChange}
                     >
                     <option value="">Seleccionar</option>
                     <option value="Enduro">Enduro</option>
@@ -72,8 +72,8 @@ function Grid({productos}) {
                         className="form-control"
                         placeholder="Min"
                         name="precioMin"
-                        // value={filtros.precioMin}
-                        // onChange={handleChange}
+                        value={filtros.precioMin}
+                        onChange={handleChange}
                     />
                     <span>-</span>
                     <input 
@@ -81,8 +81,8 @@ function Grid({productos}) {
                         className="form-control"
                         placeholder="Max"
                         name="precioMax"
-                        // value={filtros.precioMax}
-                        // onChange={handleChange}
+                        value={filtros.precioMax}
+                        onChange={handleChange}
                     />
                     </div>
                 </div>
@@ -94,8 +94,8 @@ function Grid({productos}) {
                     type="text"
                     className="form-control mb-2"
                     name="marca"
-                    // value={filtros.marca}
-                    // onChange={handleChange}
+                    value={filtros.marca}
+                    onChange={handleChange}
                     />
 
                     <label className="form-label fw-bold">Modelo</label>
@@ -103,8 +103,8 @@ function Grid({productos}) {
                     type="text"
                     className="form-control"
                     name="modelo"
-                    // value={filtros.modelo}
-                    // onChange={handleChange}
+                    value={filtros.modelo}
+                    onChange={handleChange}
                     />
                 </div>
 
@@ -114,8 +114,8 @@ function Grid({productos}) {
                     <select 
                     className="form-select"
                     name="anio"
-                    // value={filtros.anio}
-                    // onChange={handleChange}
+                    value={filtros.anio}
+                    onChange={handleChange}
                     >
                     <option value="">Todos</option>
                     <option>2024</option>
@@ -131,8 +131,8 @@ function Grid({productos}) {
                         type="checkbox"
                         id="oferta"
                         name="oferta"
-                        // checked={filtros.oferta}
-                        // onChange={handleChange}
+                        checked={filtros.oferta}
+                        onChange={handleChange}
                     />
                     <label className="form-check-label fw-bold text-danger" htmlFor="oferta">
                         Solo en Oferta 🔥
@@ -141,8 +141,8 @@ function Grid({productos}) {
                 </div>
 
                 <div className="d-grid gap-2">
-                    <button className="btn btn-primary">Aplicar Filtros</button>
-                    <button className="btn btn-link btn-sm text-muted">  {/*onClick={limpiar}*/}
+                    {/* <button className="btn btn-primary">Aplicar Filtros</button> */}
+                    <button className="btn btn-link btn-sm text-muted" onClick={limpiar}>
                     Limpiar filtros
                     </button>
                 </div>
@@ -151,7 +151,7 @@ function Grid({productos}) {
 
 
         <div className="col-lg-8 col-md-8">
-          {/* <GridProductosContainer filtros={filtros} /> */}
+          {/* grid de los productos */}
             <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mt-5">
                 {productos.map((moto) => (
                     <div className="col" key={moto.id_producto}>
