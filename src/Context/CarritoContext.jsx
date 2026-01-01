@@ -9,7 +9,7 @@ export const CarritoProvider = ({ children }) => {
 
   const [carrito, setCarrito] = useState([]);
 
-  // Agregar item al carrito
+  //Agregar item al carrito
   const addItem = (producto) => {
     setCarrito(prev => {
       // si el producto ya está, solo actualizo cantidad
@@ -17,9 +17,7 @@ export const CarritoProvider = ({ children }) => {
 
       if (existe) {
         return prev.map(item =>
-          item.id === producto.id
-            ? { ...item, cantidad: item.cantidad + producto.cantidad }
-            : item
+          item.id === producto.id ? { ...item, cantidad: item.cantidad + producto.cantidad } : item
         );
       }
 

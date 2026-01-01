@@ -36,24 +36,6 @@ function Tienda() {
     <NavbarContainer />
     <Carousel images={images} height = {700} />
     {/** Acá entrearia filtro y prodcutos grid */}
-    {/* <div className="container">
-
-      <div className="row">
-        <div className="col-lg-12 mt-5 text-center fs-2 fw-400">
-          Las motos más buscadas
-        </div>
-      </div>
-
-      <div className="row">
-        <div className="col-lg-3 col-md-4 mb-4">
-            <ProductosFilter filtros={filtros} setFiltros={setFiltros} />
-        </div>
-        <div className="col-lg-9 col-md-8">
-          <GridProductosContainer filtros={filtros} />
-        </div>
-      </div>
-    </div> */}
-    {/* <Grid /> */}
     <GridProductosContainer />
     <Footer /> 
     </>
